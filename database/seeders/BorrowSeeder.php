@@ -21,10 +21,10 @@ class BorrowSeeder extends Seeder
 
         foreach(range(1,10) as $i){
             Borrow::create([
-                'reader_id'=>$readers->random()->id(),
-                'book_id'=>$books->random()->id(),
+                'reader_id'=>$readers->random()->id,
+                'book_id'=>$books->random()->id,
                 'borrow_date'=>$faker->dateTimeBetween('-1 year','now'),
-                
+                'return_date'=>$faker->dateTimeBetween('now', '+1 months')
             ]);
         }
 

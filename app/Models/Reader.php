@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Reader extends Model
 {
-    use HasFactory;
+    protected $guarded = []; // Không bảo vệ bất kỳ thuộc tính nào
+
+    public function borrows() 
+    { 
+        return $this->hasMany(Borrow::class); 
+    } 
 }
