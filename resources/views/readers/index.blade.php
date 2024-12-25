@@ -17,7 +17,7 @@
             <table class="table table-striped table-hover align-middle">
                 <thead class="table-success">
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Birthday</th>
                     <th>Address</th>

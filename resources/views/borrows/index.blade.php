@@ -11,12 +11,15 @@
             </div>
         @endif
 
+
         <div class="d-flex justify-content-end mb-3">
         <a href="{{ route('borrows.create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add New Borrow</a>
+
         </div>
         <div class="table-responsive">
             <table class="table table-striped table-hover align-middle">
                 <thead class="table-success">
+
                     <tr>
                         <th>#</th>
                         <th>Reader</th>
@@ -26,6 +29,7 @@
                         <th>Status</th> <!-- Cột trạng thái -->
                         <th class="text-center">Actions</th>
                     </tr>
+
                 </thead>
                 <tbody>
                     @forelse ($borrows as $borrow)
