@@ -46,7 +46,7 @@
                                     <button type="button" class="btn btn-danger btn-sm delete-button"
                                             data-bs-toggle="modal"
                                             data-bs-target="#deleteModal"
-                                            data-id="{{ $book->id }}">Xóa</button>
+                                            data-id="{{ $book->id }}">Delete</button>
                                 </form>
                             </div>
                         </td>

@@ -10,11 +10,14 @@
                 {{ session('success') }}
             </div>
         @endif
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{{ route('borrows.create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add New Borrow</a>
+        </div>
         <div class="table-responsive">
             <table class="table table-striped table-hover align-middle">
                 <thead class="table-success">
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Reader</th>
                     <th>Book</th>
                     <th>Borrow Date</th>
