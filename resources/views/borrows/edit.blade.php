@@ -29,6 +29,19 @@
                 <label for="borrow_date" class="form-label">Borrow Date</label>
                 <input type="date" class="form-control" id="borrow_date" name="borrow_date" value="{{ $borrow->borrow_date }}" required>
             </div>
+                    
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="status_returned" name="status" value="1" {{ $borrow->status == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="status_returned">Returned</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="status_not_returned" name="status" value="0" {{ $borrow->status == 0 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="status_not_returned">Not Returned</label>
+                </div>
+            </div>
+
             <div class="mb-3">
                 <label for="return_date" class="form-label">Return Date</label>
                 <input type="date" class="form-control" id="return_date" name="return_date" value="{{ $borrow->return_date ? $borrow->return_date : '' }}">

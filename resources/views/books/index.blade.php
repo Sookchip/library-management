@@ -30,7 +30,7 @@
             <tbody>
                 @forelse ($books as $book)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $book->id }}</td>
                         <td>{{ $book->name }}</td>
                         <td>{{ $book->author }}</td>
                         <td>{{ $book->category }}</td>
@@ -39,14 +39,14 @@
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <a href="{{ route('books.show', $book->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i>Show</a>
-                                <a href="{{ route('books.edit', $book->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil">Edit</i></a>
+                                <a href="{{ route('books.edit', $book->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i>Edit</a>
                                 <form action="{{ route('books.destroy', $book->id) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" class="btn btn-danger btn-sm delete-button"
                                             data-bs-toggle="modal"
                                             data-bs-target="#deleteModal"
-                                            data-id="{{ $book->id }}">Xóa</button>
+                                            data-id="{{ $book->id }}">Delete</button>
                                 </form>
                             </div>
                         </td>
@@ -59,6 +59,9 @@
             </tbody>
         </table>
     </div>
+    <div class="d-flex justify-content-center mt-3">
+            {{ $books->links('pagination::bootstrap-4') }}
+        </div>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

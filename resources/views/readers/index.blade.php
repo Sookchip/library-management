@@ -28,7 +28,7 @@
                 <tbody>
                 @forelse ($readers as $reader)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $reader->id }}</td>
                         <td>{{ $reader->name }}</td>
                         <td>{{ $reader->birthday }}</td>
                         <td>{{ $reader->address }}</td>
@@ -53,6 +53,9 @@
                 @endforelse
                 </tbody>
             </table>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            {{ $readers->links('pagination::bootstrap-4') }}
         </div>
     </div>
 

@@ -10,7 +10,7 @@ class ReaderController extends Controller
     public function index()
     {
         $readers = Reader::all();
-        $readers = Reader::orderBy('created_at', 'desc')->get();
+        $readers = Reader::orderBy('created_at', 'desc')->paginate(5);
         return view('readers.index', compact('readers'));
     }
 

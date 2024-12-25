@@ -12,7 +12,7 @@ class BorrowController extends Controller
     public function index()
     {
         $borrows = Borrow::all();
-        $borrows = Borrow::orderBy('created_at', 'desc')->get();
+        $borrows = Borrow::orderBy('created_at', 'desc')->paginate(5);
         return view('borrows.index', compact('borrows'));
     }
 
@@ -51,14 +51,23 @@ class BorrowController extends Controller
 
     public function update(Request $request, Borrow $borrow)
     {
-        $validated = $request->validate([
+        $request->validate([
             'reader_id' => 'required|exists:readers,id',
             'book_id' => 'required|exists:books,id',
             'borrow_date' => 'required|date',
             'return_date' => 'nullable|date|after_or_equal:borrow_date',
+            'status' => 'required|boolean', // Trường trạng thái
         ]);
-
-        $borrow->update($validated);
+    
+        $borrow = Borrow::findOrFail($borrow->id);
+    
+        $borrow->update([
+            'reader_id' => $request->reader_id,
+            'book_id' => $request->book_id,
+            'borrow_date' => $request->borrow_date,
+            'return_date' => $request->return_date,
+            'status' => $request->status, // Cập nhật trạng thái
+        ]);
         return redirect()->route('borrows.index')->with('success', 'Borrow updated successfully.');
     }
 

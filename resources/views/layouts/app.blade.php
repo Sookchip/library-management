@@ -15,7 +15,7 @@
     </main>
 
     <footer class="text-center py-3">
-        <p>© {{ date('Y') }} Library Management System</p>
+        
     </footer>
     <script src="{{asset('assets/bootstrap.bundle.min.js')}}"></script>
 </body>

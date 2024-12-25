@@ -3,9 +3,9 @@
         <a class="navbar-brand" href="{{ route('books.index') }}">Library</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('books.index') }}">Books</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('readers.index') }}">Readers</a>
                 </li>
